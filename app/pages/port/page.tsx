@@ -8,8 +8,9 @@ import Skills from "@/components/skills";
 const SAMPLE_PROJECTS = [
   { title: 'Práctica profesional - Contraloría General de la República', description: 'Realicé escaneos a todos los segmentos de red de la institución para identificar vulnerabilidades en sistemas, equipos y configuraciones.  Identificación de vulnerabilidades de versión de las bases de datos. Además, elaboré informes de pentesting con matrices de riesgo, evaluando probabilidad e impacto para orientar la mitigación de hallazgos.', fecha: 'Dic/2024 - Feb/2025' },
   
-  { title: 'Desarrollo Frontend - +Arq', description: 'Desarrollé una página web para cliente de consultoría de Arquitectura +arq. Tecnologías usadas: Astro, Javascript, Typescript y CSS.' },
-  { title: 'Desarrollo Fullstack - Proyecto personal', description: 'Desarrollé una aplicación web para la gestión de proyectos y tareas, utilizando React para el frontend y Node.js con Express para el backend. Implementé autenticación de usuarios y almacenamiento de datos en MongoDB.', fecha: 'Mar/2023 - Jun/2023' },
+  { title: 'Desarrollo Fullstack - OlivoSport', description: 'Desarrollé una aplicación web para la gestión de proyectos y tareas de un centro deportivo, utilizando React para el frontend y Node.js con Express para el backend. Implementé autenticación de usuarios y almacenamiento de datos en MongoDB.', fecha: 'Mar/2023 - Jun/2023' },
+
+  { title: 'Desarrollo Frontend - +Arq', description: 'Desarrollé una página web para cliente de consultoría de Arquitectura +arq. Tecnologías usadas: Astro, Javascript, Typescript y CSS.', fecha: 'Jun/2025 - Sep/2025' },
 ];
 
 export default function Home() {

@@ -2,13 +2,14 @@ import CoverParticles from "@/components/cover-particles";
 import Header from "@/components/Header";
 import ProjectsGrid from "@/components/ProjectsGrid";
 import TerminalMock from "@/components/TerminalMock";
+import { socialNetworks } from "@/data";
 
 
 
 const SAMPLE_PROJECTS = [
   { title: 'Ver Portafolio', description: 'Echa una mirada a mi experiencia laboral y alguno de mis proyectos desarrollados.💣⚔️', href: '/pages/port' },
   
-  { title: 'Writeups de CTFs', description: 'Echa una mirada del procedimiento utilizado para resolver máquinas vulnerables de distintas plataformas.🛡️💻', href: '/pages/writeups' },
+  { title: 'Writeups de CTFs', description: 'Echa una mirada del procedimiento utilizado para resolver máquinas vulnerables de distintas plataformas.☠️💻', href: '/pages/writeups' },
 ];
 
 export default function Home() {
@@ -22,7 +23,7 @@ export default function Home() {
             <Header title="Felipe Alejandro Silva — Portafolio" />
 
             <p style={{ marginTop: '0.8rem', color: 'var(--muted)' }}>
-              Bienvenido a mi Landingpage!! Aquí puedes encontrar un resumen de mis proyectos realizados.
+              Bienvenido a mi portafolio profesional. Soy un apasionado de la tecnología y la programación, con experiencia en desarrollo web y ciberseguridad. Aquí encontrarás una selección de mis proyectos y writeups de CTFs que reflejan mis habilidades y conocimientos en estas áreas.
             </p>
 
             <div style={{ marginTop: '1.2rem' }}>
@@ -31,6 +32,14 @@ export default function Home() {
 
             <div style={{ marginTop: '1.4rem' }}>
               <TerminalMock />
+            </div>
+            <div style={{ marginTop: '1.4rem', color: 'var(--muted)', display: 'flex', gap: '12px', alignItems: 'center', justifyContent: 'center', padding: '8px' }}>
+
+              {socialNetworks.map((network) => (
+                <a key={network.id} href={network.src} target="_blank" rel="noopener noreferrer" style={{ margin: '0 10px', textDecoration: 'none', color: 'var(--muted)' }}>
+                  {network.logo}
+                </a>
+              ))}
             </div>
           </section>
         </div>
