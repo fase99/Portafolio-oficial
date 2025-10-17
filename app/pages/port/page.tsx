@@ -2,6 +2,7 @@ import CardExp from "@/components/CardExp";
 
 import Header from "@/components/Header";
 import Skills from "@/components/skills";
+import Link from 'next/link';
 
 export const runtime = 'edge';
 
@@ -16,9 +17,7 @@ const SAMPLE_PROJECTS = [
 export default function Home() {
   return (
     <main>
-      <button>
-        <a href="/" style={{ color: 'var(--muted)', textDecoration: 'none', position: 'absolute', top: '20px', left: '20px', zIndex: 10 }}>&#8592; Volver</a>
-      </button>
+      <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none', position: 'absolute', top: '20px', left: '20px', zIndex: 10 }}>&#8592; Volver</Link>
       <div className="flex min-h-[100vh] h-full items-center justify-center bg-no-repeat bg-gradient-cover font-sans">
         
         <div className="w-full" style={{  }}>

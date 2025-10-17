@@ -1,10 +1,10 @@
 
+import Link from 'next/link';
+
 export default function Writeups() {
   return (
     <main>
-      <button>
-        <a href="/" style={{ color: 'var(--muted)', textDecoration: 'none', position: 'absolute', top: '20px', left: '20px', zIndex: 10 }}>&#8592; Volver</a>
-      </button>
+      <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none', position: 'absolute', top: '20px', left: '20px', zIndex: 10 }}>&#8592; Volver</Link>
       <div className="flex min-h-[100vh] h-full items-center justify-center bg-no-repeat bg-gradient-cover font-sans">
         <div className="w-full" style={{  }}>
           <h1 className="neon" style={{ fontSize: '3rem', textAlign: 'center', marginBottom: '1rem' }}>Writeups</h1>
