@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev",
+    "build": "next build",
+    "vercel-build": "next build",
     "start": "next start",
-    "lint": "eslint",
-  "build:pages": "next build && npx @opennextjs/cloudflare@latest --outdir out-pages",
-  "pages:build": "next build && npx @opennextjs/cloudflare@latest --outdir out-pages",
-  "publish:pages": "npx wrangler pages publish out-pages --project-name=YOUR_PROJECT_NAME --branch=main"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "typecheck": "tsc --noEmit",
+    "build:pages": "next build && npx @opennextjs/cloudflare@latest --outdir out-pages",
+    "pages:build": "next build && npx @opennextjs/cloudflare@latest --outdir out-pages",
+    "publish:pages": "npx wrangler pages publish out-pages --project-name=YOUR_PROJECT_NAME --branch=main"
   },
   "dependencies": {
     "@tsparticles/react": "^3.0.0",
