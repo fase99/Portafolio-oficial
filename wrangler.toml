@@ -7,3 +7,9 @@ account_id = "YOUR_ACCOUNT_ID"
 
 [env.production]
 name = "your-cloudflare-project-production"
+ 
+# Tell Pages where the built output lives
+pages_build_output_dir = "out-pages"
+
+# Compatibility flags: keep empty to avoid unsupported flags like `nodejs_compat`.
+compatibility_flags = []
