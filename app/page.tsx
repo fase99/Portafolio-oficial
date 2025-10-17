@@ -5,7 +5,7 @@ import TerminalMock from "@/components/TerminalMock";
 import { socialNetworks } from "@/data";
 
 const SAMPLE_PROJECTS = [
-  { title: 'Ver Portafolio', description: 'Echa una mirada a mi experiencia laboral y alguno de mis proyectos desarrollados.💣⚔️', href: '/pages/port' },
+  { title: 'Ver Portafolio', description: 'Echa una mirada a mi experiencia laboral y alguno de mis proyectos desarrollados.💣⚔️', href: '/port' },
   
   { title: 'Writeups de CTFs', description: 'Echa una mirada del procedimiento utilizado para resolver máquinas vulnerables de distintas plataformas.☠️💻', href: '/pages/writeups' },
 ];
