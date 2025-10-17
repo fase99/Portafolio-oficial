@@ -20,10 +20,10 @@ export default function Home() {
         <CoverParticles/>
         <div className="w-full" style={{  }}>
           <section className="panel  self-center" style={{ maxWidth: 980, margin: '0 auto' }}>
-            <Header title="Felipe Alejandro Silva — Portafolio" />
+            <Header title="Felipe — Ciberseguridad y Desarrollo de Software" />
 
             <p style={{ marginTop: '0.8rem', color: 'var(--muted)' }}>
-              Bienvenido a mi portafolio profesional. Soy un apasionado de la tecnología y la programación, con experiencia en desarrollo web y ciberseguridad. Aquí encontrarás una selección de mis proyectos y writeups de CTFs que reflejan mis habilidades y conocimientos en estas áreas.
+              Hola, soy Felipe, un entusiasta de la ciberseguridad y el hacking ético. Me apasiona explorar las vulnerabilidades de los sistemas y compartir mis conocimientos a través de write-ups detallados. En este espacio, encontrarás una colección de mis proyectos realizados y write-ups de CTFs que he resuelto.
             </p>
 
             <div style={{ marginTop: '1.2rem' }}>

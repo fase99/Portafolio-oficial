@@ -1,5 +1,7 @@
 "use client"
 
+export const runtime = 'edge';
+
 import { useCallback, useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import type { Container, Engine } from "@tsparticles/engine";

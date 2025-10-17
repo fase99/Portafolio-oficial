@@ -1,5 +1,7 @@
 "use client"
 
+export const runtime = 'edge';
+
 import { motion } from "framer-motion";
 // If 'motion-transitions.ts' is in 'utils' folder at the project root, use:
 import { fadeIn } from "../utils/motion-transitions";
