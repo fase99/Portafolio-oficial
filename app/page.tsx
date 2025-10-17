@@ -4,8 +4,6 @@ import ProjectsGrid from "@/components/ProjectsGrid";
 import TerminalMock from "@/components/TerminalMock";
 import { socialNetworks } from "@/data";
 
-export const runtime = 'edge';
-
 const SAMPLE_PROJECTS = [
   { title: 'Ver Portafolio', description: 'Echa una mirada a mi experiencia laboral y alguno de mis proyectos desarrollados.💣⚔️', href: '/pages/port' },
   
