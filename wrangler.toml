@@ -1,0 +1,9 @@
+name = "your-cloudflare-project"
+main = "./out-pages"
+compatibility_date = "2025-10-16"
+
+# Rellena `account_id` con tu Account ID de Cloudflare
+account_id = "YOUR_ACCOUNT_ID"
+
+[env.production]
+name = "your-cloudflare-project-production"

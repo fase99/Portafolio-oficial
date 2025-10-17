@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:pages": "next build && npx @cloudflare/next-on-pages@latest .output --output out-pages",
+    "publish:pages": "npx wrangler pages publish out-pages --project-name=YOUR_PROJECT_NAME --branch=main"
   },
   "dependencies": {
     "@tsparticles/react": "^3.0.0",
@@ -26,6 +28,8 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.5",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "@cloudflare/next-on-pages": "^2.0.0",
+    "wrangler": "^3.0.0"
   }
 }
