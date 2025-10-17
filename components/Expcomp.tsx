@@ -1,5 +1,7 @@
 import { relative } from "path";
 
+export const runtime = 'edge';
+
 export type Exp = {
   title: string;
   description?: string;

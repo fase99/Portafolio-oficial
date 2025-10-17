@@ -3,7 +3,7 @@ import CardExp from "@/components/CardExp";
 import Header from "@/components/Header";
 import Skills from "@/components/skills";
 
-
+export const runtime = 'edge';
 
 const SAMPLE_PROJECTS = [
   { title: 'Práctica profesional - Contraloría General de la República', description: 'Realicé escaneos a todos los segmentos de red de la institución para identificar vulnerabilidades en sistemas, equipos y configuraciones.  Identificación de vulnerabilidades de versión de las bases de datos. Además, elaboré informes de pentesting con matrices de riesgo, evaluando probabilidad e impacto para orientar la mitigación de hallazgos.', fecha: 'Dic/2024 - Feb/2025' },

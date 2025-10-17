@@ -1,3 +1,6 @@
+
+export const runtime = 'edge';
+
 export default function TerminalMock({ children }: { children?: React.ReactNode }) {
   return (
     <div className="terminal2" style={{ fontSize: '0.95rem' }}>

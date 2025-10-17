@@ -1,3 +1,6 @@
+
+export const runtime = 'edge';
+
 export default function Header({ title, onWriteupsClick }: { title?: string; onWriteupsClick?: () => void }) {
   return (
     <header className="flex items-center justify-between mb-4">

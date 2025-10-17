@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+export const runtime = 'edge';
+
 export type ProjectCardProps = {
   title: string;
   description?: string;
