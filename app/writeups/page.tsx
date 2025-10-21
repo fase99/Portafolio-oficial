@@ -10,6 +10,9 @@ export default function WriteupsIndex() {
           <h1 className="neon" style={{ fontSize: '3rem', textAlign: 'center', marginBottom: '1rem' }}>Writeups</h1>
           <p style={{ color: 'var(--muted)', textAlign: 'center', marginBottom: '2rem' }}>Aquí encontrarás algunos de mis writeups de CTFs y desafíos de seguridad informática que he completado.</p>
           <section className="panel self-center" style={{ maxWidth: 980, margin: '0 auto', padding: '1rem', display: 'grid', gap: '1rem' }}>
+            <div >
+              <h1 className="neon ">MÁQUINAS VULNERABLES - CTF</h1>
+            </div>
             <WriteupCard title="Winterfell (DockerLabs)" excerpt="Reconocimiento, explotación y escalado de privilegios en la máquina vulnerable Winterfell." href="/writeups/winterfell" />
           </section>
         </div>
