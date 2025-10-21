@@ -1,8 +1,7 @@
-
 import Link from 'next/link';
-import WriteupCard from '../../../components/WriteupCard';
+import WriteupCard from '../../components/WriteupCard';
 
-export default function Writeups() {
+export default function WriteupsIndex() {
   return (
     <main>
       <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none', position: 'absolute', top: '20px', left: '20px', zIndex: 10 }}>&#8592; Volver</Link>

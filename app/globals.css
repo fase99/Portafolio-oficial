@@ -137,3 +137,31 @@ main{
 
 
 
+
+/* Markdown article styles */
+.markdown {
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+}
+.markdown h1, .markdown h2, .markdown h3, .markdown h4 {
+  color: var(--accent);
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.15;
+}
+.markdown h1 { font-size: 1.9rem; }
+.markdown h2 { font-size: 1.5rem; }
+.markdown h3 { font-size: 1.15rem; }
+.markdown p { margin: 0.6rem 0; color: var(--text); }
+.markdown ul, .markdown ol { margin: 0.6rem 0 0.6rem 1.25rem; }
+.markdown li { margin: 0.3rem 0; }
+.markdown pre { background: rgba(0,0,0,0.38); padding: 0.9rem; border-radius: 8px; overflow: auto; border: 1px solid rgba(0,255,106,0.04); }
+.markdown code { font-family: var(--font-mono); background: rgba(0,0,0,0.14); padding: 0.12rem 0.28rem; border-radius: 4px; }
+.markdown img { display: block; margin: 0.8rem auto; max-width: 100%; border-radius: 6px; }
+.markdown blockquote { border-left: 3px solid rgba(0,255,106,0.12); margin: 0.8rem 0; padding: 0.4rem 0.8rem; color: var(--muted); background: rgba(0,255,106,0.01); }
+.markdown table { width: 100%; border-collapse: collapse; margin: 0.8rem 0; }
+.markdown th, .markdown td { border: 1px solid rgba(255,255,255,0.04); padding: 0.4rem 0.6rem; }
+
+
+
