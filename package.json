@@ -19,9 +19,9 @@
     "lucide-react": "^0.545.0",
     "marked": "^5.1.1",
     "motion": "^12.23.24",
-    "next": "^16.0.7",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1",
+    "next": "^16.0.10",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "sanitize-html": "^2.11.0"
   },
   "devDependencies": {
@@ -31,7 +31,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "^16.0.7",
+    "eslint-config-next": "^16.0.10",
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.43.0"
