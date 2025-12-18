@@ -19,10 +19,10 @@ export default function Home() {
         <CoverParticles/>
         <div className="w-full" style={{  }}>
           <section className="panel  self-center" style={{ maxWidth: 980, margin: '0 auto' }}>
-            <Header title="fase99 💻  — Ingeniería Civil Informática y Telecomunicaciones" />
+            <Header title="Felipe Silva 💻 - Ingeniería Civil Informática y Telecomunicaciones" />
 
             <p style={{ marginTop: '0.8rem', color: 'var(--muted)' }}>
-              Hola! soy fase99, un apasionado por las ciencias de la computación y un entusiasta de la ciberseguridad. Puedes revisar algunos de mis proyectos realizados. 
+              Hola! soy Felipe, un apasionado por las ciencias de la computación y un entusiasta de la ciberseguridad. Puedes revisar algunos de mis proyectos realizados. 
             </p>
 
             <div style={{ marginTop: '1.2rem' }}>
