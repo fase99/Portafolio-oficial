@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import ProjectsGrid from "@/components/ProjectsGrid";
 import TerminalMock from "@/components/TerminalMock";
 import { socialNetworks } from "@/data";
+import { marked } from 'marked';
 
 const SAMPLE_PROJECTS = [
   { title: 'Ver Portafolio', description: 'Echa una mirada a mi experiencia laboral y alguno de mis proyectos desarrollados.💣⚔️', href: '/port' },
@@ -18,10 +19,10 @@ export default function Home() {
         <CoverParticles/>
         <div className="w-full" style={{  }}>
           <section className="panel  self-center" style={{ maxWidth: 980, margin: '0 auto' }}>
-            <Header title="Felipe — Ciberseguridad y Desarrollo de Software" />
+            <Header title="fase99 💻  — Ingeniería Civil Informática y Telecomunicaciones" />
 
             <p style={{ marginTop: '0.8rem', color: 'var(--muted)' }}>
-              Hola, soy Felipe, un entusiasta de la ciberseguridad y el hacking ético. Me apasiona explorar las vulnerabilidades de los sistemas y compartir mis conocimientos a través de write-ups detallados. En este espacio, encontrarás una colección de mis proyectos realizados y write-ups de CTFs que he resuelto.
+              Hola! soy fase99, un apasionado por las ciencias de la computación y un entusiasta de la ciberseguridad. Puedes revisar algunos de mis proyectos realizados. 
             </p>
 
             <div style={{ marginTop: '1.2rem' }}>
