@@ -1,4 +1,4 @@
-"use client"
+/* "use client"
 
 export const runtime = 'edge';
 
@@ -109,4 +109,4 @@ const CoverParticles = () =>{
         );
 }
 
-export default CoverParticles;
+export default CoverParticles; */

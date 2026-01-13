@@ -8,9 +8,10 @@ export type Exp = {
   description?: string;
   imageURL?: string;
   link?: string;
+  technologies?: Array<{name: string; logo: string}>;
 };
 
-export default function Excomp({ title, description, imageURL, link }: Exp) {
+export default function Excomp({ title, description, imageURL, link, technologies }: Exp) {
   return (
     <a href={link} target="_blank" rel="noopener noreferrer" className="block group no-underline h-full">
       <article className="panel h-full flex flex-col overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg bg-black/40 backdrop-blur-sm" style={{ padding: 0, border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px' }}>
@@ -35,6 +36,26 @@ export default function Excomp({ title, description, imageURL, link }: Exp) {
             <p className="text-sm leading-relaxed flex-grow" style={{ color: 'var(--muted)' }}>
               {description}
             </p>
+          )}
+          {technologies && technologies.length > 0 && (
+            <div className="mt-5 pt-4 border-t border-white/10">
+              
+              <div className="flex flex-wrap gap-5 ml-4 ">
+                {technologies.map((tech, index) => (
+                  <div 
+                    key={index}
+                    className="group/tech relative"
+                    title={tech.name}
+                  >
+                    <img 
+                      src={tech.logo} 
+                      alt={tech.name}
+                      className="w-8 h-8 object-contain transition-transform duration-300 group-hover/tech:scale-110 filter brightness-90 hover:brightness-110"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           )}
         </div>
       </article>

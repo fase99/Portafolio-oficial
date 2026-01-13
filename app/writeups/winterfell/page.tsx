@@ -23,9 +23,37 @@ export default function Winterfell() {
   });
 
   return (
-    <main style={{ padding: '2rem' }}>
-      <Link href="/writeups" style={{ color: 'var(--muted)', textDecoration: 'none' }}>&#8592; Volver a writeups</Link>
-  <article className="panel markdown" style={{ maxWidth: 980, margin: '1rem auto', padding: '1rem' }} dangerouslySetInnerHTML={{ __html: clean }} />
+    <main className="min-h-screen bg-gradient-cover" style={{ padding: '2rem' }}>
+      <div style={{ maxWidth: 980, margin: '0 auto' }}>
+        <Link href="/writeups" className="text-lg hover:text-emerald-300 inline-block mb-6">&#8592; Volver a writeups</Link>
+        
+        {/* Header Info */}
+        <div className="panel mb-6" style={{ padding: '1.5rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-xs px-2 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+              DockerLabs
+            </span>
+            <span className="text-xs px-2 py-1 rounded border text-green-400 border-green-400/30 bg-green-500/10">
+              Fácil
+            </span>
+          </div>
+          <h1 className="neon text-3xl mb-2">Winterfell</h1>
+          <p style={{ color: 'var(--muted)' }}>Máquina vulnerable - CTF de seguridad informática</p>
+        </div>
+
+        {/* Writeup Content */}
+        <article 
+          className="panel markdown" 
+          style={{ 
+            padding: '2rem', 
+            borderRadius: '12px',
+            border: '1px solid rgba(255,255,255,0.1)',
+            backgroundColor: 'rgba(0,0,0,0.4)',
+            backdropFilter: 'blur(10px)'
+          }} 
+          dangerouslySetInnerHTML={{ __html: clean }} 
+        />
+      </div>
     </main>
   );
 }
