@@ -48,17 +48,17 @@ export default function Home() {
         
             <div className="mb-8">
               <p className="text-lg md:text-2xl mb-3" style={{ color: 'var(--muted)' }}>
-                Software Development Engineer
+                Ingeniero Civil en Informática y Telecomunicaciones
               </p>
               <p className="text-sm md:text-lg font-light text-emerald-200/70">
-                Especializado en Ciberseguridad • Arquitecturas Escalables • Desarrollo de Software
+                Ciberseguridad • Arquitecturas Escalables • Desarrollo de Software
               </p>
             </div>
 
          
             <div className="max-w-2xl mx-auto mb-10">
               <p className="text-base md:text-lg leading-relaxed" style={{ color: 'var(--muted)' }}>
-                Ingeniería Civil Informática y Telecomunicaciones 📚 | Apasionado por las ciencias de la computación, desarrollo fullstack y la ciberseguridad. Actualmente explorando nuevas tecnologías y resolviendo desafíos de seguridad.
+                Soy un pasionado por las ciencias de la computación, desarrollo fullstack y la ciberseguridad. Actualmente explorando nuevas tecnologías y resolviendo desafíos de seguridad.
               </p>
             </div>
 
