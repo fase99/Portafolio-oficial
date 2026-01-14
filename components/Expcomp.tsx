@@ -16,7 +16,7 @@ export default function Excomp({ title, description, imageURL, link, technologie
     <a href={link} target="_blank" rel="noopener noreferrer" className="block group no-underline h-full">
       <article className="panel h-full flex flex-col overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg bg-black/40 backdrop-blur-sm" style={{ padding: 0, border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px' }}>
         
-        <div className="w-full h-48 overflow-hidden bg-black/20 relative border-b border-white/5">
+        <div className="w-full h-70 overflow-hidden bg-black/20 relative border-b border-white/5">
           {imageURL ? (
             <img 
               src={imageURL} 

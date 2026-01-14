@@ -15,7 +15,9 @@ const SAMPLE_PROJECTS = [
     technologies: [
       { name: 'Angular', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg' },
       { name: 'NestJS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg' },
-      { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' }
+      { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+
+      { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' }
     ]
    },
 
@@ -26,6 +28,38 @@ const SAMPLE_PROJECTS = [
     technologies: [
       { name: 'Astro', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg' },
       { name: 'TailwindCSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' }
+    ]
+  },
+  { title: 'GeoRuta Inmobiliaria', 
+    description: 'Sistema avanzado de georuteo que redefine la planificación de visitas inmobiliarias. El objetivo no es solo encontrar la ruta más corta, sino la más "resiliente": aquella que garantiza seguridad y predictibilidad frente a amenazas urbanas. La plataforma permite a los agentes visualizar propiedades, filtrar por métricas avanzadas (calidad de colegios cercanos, plusvalía) y simular escenarios de crisis (cierres viales o accidentes) para evaluar la robustez de sus rutas.', 
+    imageURL: "GeoRuta.png",
+    link: 'https://github.com/fase99/GeoRuta-Inmobiliaria',
+    technologies: [
+      { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+      { name: 'Flask', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
+      { name: 'PostgreSQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+      { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+      { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+      { name: 'HTML5', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+      { name: 'CSS3', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+      { name: 'Leaflet', logo: 'https://www.svgrepo.com/show/353991/leaflet.svg' }
+    ]
+  },
+  { title: 'Virtual Fit - Interfaz GUI Profesional / Proyecto de Arquitectura de Software - Arquitectura SOA', 
+    description: 'Resumen del Proyecto Este proyecto aborda el desafío de administrar una arquitectura compleja de microservicios para un e-commerce. En lugar de depender de múltiples terminales y comandos manuales, desarrollé una GUI centralizada que actúa como orquestador del sistema. La aplicación permite iniciar, detener y supervisar servicios críticos (como el motor de pagos, gestión de puntos y carrito de compras) desde una interfaz unificada y reactiva.', 
+    imageURL: "VirtualFit.png",
+    link: 'https://github.com/fase99/ASAI-VirtualFit',
+    technologies: [
+
+      { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+      { name: 'Socket.IO', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg' },
+ 
+      { name: 'Microservices / SOA', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+
+      { name: 'API REST', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg' },
+      { name: 'Vanilla JavaScript (ES6+)', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+      { name: 'CSS3 (Grid & Flexbox)', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+      { name: 'HTML5 Semantic', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
     ]
   },
 ];
