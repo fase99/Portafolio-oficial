@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import Link from 'next/link';
 import { marked } from 'marked';
 import sanitizeHtml from 'sanitize-html';
@@ -9,7 +9,7 @@ export default function Winterfell() {
   let md = '';
   try {
     md = fs.readFileSync(mdPath, 'utf8');
-  } catch (err) {
+  } catch {
     md = '# Error\nNo se pudo leer el writeup.';
   }
 

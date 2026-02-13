@@ -119,7 +119,7 @@ export default function Home() {
               <div className="flex-1 text-center md:text-left">
                 <Header title="fase99$" />
                 <h2 className="text-base md:text-xl text-emerald-200/80 mt-2 md:mt-3 font-light tracking-wide">
-                  Software Development | Secure Infrastructure
+                  Software Development | CyberSecurity
                 </h2>
                 <p className="text-sm md:text-base mt-4" style={{ color: 'var(--muted)' }}>
                   Desarrollador fullstack especializado en seguridad, backend y arquitecturas escalables. 

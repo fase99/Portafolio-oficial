@@ -1,11 +1,9 @@
 "use client"
 
 import React from "react";
-import Header from "./Header";
 
 type SkillsProps = {
-    tittle?: string;
-    skills?: string[];
+    readonly skills?: readonly string[];
 };
 
 const defaultSkills = [

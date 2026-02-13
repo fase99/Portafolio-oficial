@@ -1,9 +1,8 @@
 
-import Header from "@/components/Header";
 import ProjectsGrid from "@/components/ProjectsGrid";
 import TerminalMock from "@/components/TerminalMock";
 import { socialNetworks } from "@/data";
-import { marked } from 'marked';
+
 
 const SAMPLE_PROJECTS = [
   { title: 'Ver Portafolio', description: 'Echa una mirada a mi experiencia laboral y alguno de mis proyectos desarrollados.', href: '/port', emoji: '💼' },
