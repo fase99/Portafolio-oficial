@@ -57,7 +57,7 @@ export default function Home() {
          
             <div className="max-w-2xl mx-auto mb-10">
               <p className="text-base md:text-lg leading-relaxed" style={{ color: 'var(--muted)' }}>
-                Soy un pasionado por las ciencias de la computación, desarrollo fullstack y la ciberseguridad. 
+                Soy un pasionado por las ciencias de la computación, desarrollo fullstack y la ciberseguridad. Aquí podrás encontrar dos secciones, donde te muestro mis proyectos personales realizados. Otra sección donde muestro algunos writeups.
               </p>
             </div>
 

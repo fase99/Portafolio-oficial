@@ -65,7 +65,6 @@ const SAMPLE_PROJECTS = [
 ];
 
 
-//const PRESENTATION = ""
 
 export default function Home() {
   return (
