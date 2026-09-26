@@ -2,28 +2,33 @@ import Contact from "@/components/Contact";
 import CvButton from "@/components/CvButton";
 import EntryPanel from "@/components/EntryPanel";
 import InterceptConsole from "@/components/InterceptConsole";
-import { TerminalPreview } from "@/components/EntryPreviews";
+import { ArchitecturePreview, TerminalPreview } from "@/components/EntryPreviews";
+import LogoMarquee, { type MarqueeItem } from "@/components/LogoMarquee";
 import ScrambleText from "@/components/ScrambleText";
+import {
+  siDocker,
+  siElasticsearch,
+  siExpress,
+  siGooglecloud,
+  siGooglepubsub,
+  siMongodb,
+  siNestjs,
+  siNodedotjs,
+  siSonarqubeserver,
+  siTypescript,
+} from "simple-icons";
 
-const stack = [
-  {
-    title: "Backend & Cloud",
-    accent: "text-proj",
-    dot: "from-[var(--proj)] to-[var(--proj-2)]",
-    items: [
-      "NestJS", "TypeScript", "Node.js", "Express", "MongoDB",
-      "GCP Pub/Sub", "Elasticsearch", "Docker", "SOA", "CI/CD · SonarQube",
-    ],
-  },
-  {
-    title: "Ciberseguridad",
-    accent: "text-wu",
-    dot: "from-[var(--wu)] to-[var(--wu-2)]",
-    items: [
-      "Kali Linux", "Nmap", "NetExec", "Metasploit", "Burp Suite",
-      "Escaneo de redes", "Pentesting", "Matrices de riesgo", "NIST", "ISO 27001",
-    ],
-  },
+const stack: MarqueeItem[] = [
+  { name: "NestJS", icon: siNestjs },
+  { name: "TypeScript", icon: siTypescript },
+  { name: "Node.js", icon: siNodedotjs },
+  { name: "Express", icon: siExpress },
+  { name: "MongoDB", icon: siMongodb },
+  { name: "Google Cloud", icon: siGooglecloud },
+  { name: "GCP Pub/Sub", icon: siGooglepubsub },
+  { name: "Elasticsearch", icon: siElasticsearch },
+  { name: "Docker", icon: siDocker },
+  { name: "SonarQube", icon: siSonarqubeserver },
 ];
 
 const courses = [
@@ -82,12 +87,14 @@ export default function Home() {
           index="01"
           eyebrow="Proyectos"
           title="Backend, Cloud y arquitectura"
-          description="APIs y microservicios con NestJS y Node.js, arquitecturas SOA, integraciones con GCP Pub/Sub y Elasticsearch, y despliegues con Docker y CI/CD. Cada proyecto detalla su stack por capa y enlaza a su código."
+          description="APIs y microservicios en JavaScript y TypeScript con Node.js y NestJS, arquitecturas SOA, persistencia en MongoDB y despliegues con Docker. Cada proyecto detalla su stack por capa y enlaza a su código."
           accent="proj"
           href="/projects"
           cta="Ver proyectos"
-          chips={["NestJS", "GCP", "Docker", "MongoDB"]}
-        />
+          chips={["NestJS", "SOA", "Docker", "MongoDB"]}
+        >
+          <ArchitecturePreview />
+        </EntryPanel>
 
         <EntryPanel
           index="02"
@@ -105,23 +112,7 @@ export default function Home() {
 
       <section className="mt-20" aria-label="Stack">
         <h2 className="label-mono mb-4">Stack</h2>
-        <div className="grid gap-4 md:grid-cols-2 md:gap-6">
-          {stack.map((group) => (
-            <div key={group.title} className="surface p-5">
-              <h3 className={`flex items-center gap-2 text-sm font-medium ${group.accent}`}>
-                <span className={`h-2 w-2 rounded-full bg-gradient-to-br ${group.dot}`} />
-                {group.title}
-              </h3>
-              <ul className="mt-3 flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <li key={item} className="chip">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        <LogoMarquee items={stack} label="Tecnologías de backend y cloud" />
       </section>
 
       <section className="mt-12" aria-label="Formación">
@@ -135,20 +126,7 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="mt-24" aria-labelledby="desafio-title">
-        <div className="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] md:gap-16">
-          <div data-scramble-scope>
-            <p className="label-mono">Desafío rápido</p>
-            <h2 id="desafio-title" className="mt-2 text-2xl font-semibold tracking-tight md:text-3xl">
-              <ScrambleText text="Mensaje interceptado" />
-            </h2>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
-              Capturé este paquete en la red. Decodifica el payload y escribe lo que dice en texto plano.
-            </p>
-          </div>
-          <InterceptConsole />
-        </div>
-      </section>
+      
 
       <Contact />
     </main>
