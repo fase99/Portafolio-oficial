@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./globals.css";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,11 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "fase99 Landing Page 💻",
-  description: "Landing page made by fase99",
+  title: {
+    default: "Felipe Silva Escobar — Backend, Cloud & Ciberseguridad",
+    template: "%s · Felipe Silva Escobar",
+  },
+  description:
+    "Ingeniero Civil en Informática y Telecomunicaciones. Proyectos de backend y cloud en GCP, y writeups de ciberseguridad.",
 };
-
-
 
 export default function RootLayout({
   children,
@@ -26,10 +29,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-  
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

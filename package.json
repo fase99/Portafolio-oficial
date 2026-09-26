@@ -14,11 +14,9 @@
     "publish:pages": "npx wrangler pages publish out-pages --project-name=YOUR_PROJECT_NAME --branch=main"
   },
   "dependencies": {
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.9.1",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.545.0",
     "marked": "^5.1.1",
-    "motion": "^12.23.24",
     "next": "^16.0.10",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",

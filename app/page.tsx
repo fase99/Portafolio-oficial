@@ -1,102 +1,118 @@
+import EntryPanel from "@/components/EntryPanel";
+import { ArchitecturePreview, TerminalPreview } from "@/components/EntryPreviews";
 
-import ProjectsGrid from "@/components/ProjectsGrid";
-import TerminalMock from "@/components/TerminalMock";
-import { socialNetworks } from "@/data";
+const stack = [
+  {
+    title: "Backend & Cloud",
+    accent: "text-proj",
+    dot: "from-[var(--proj)] to-[var(--proj-2)]",
+    items: [
+      "NestJS", "TypeScript", "Node.js", "Express", "MongoDB",
+      "GCP Pub/Sub", "Elasticsearch", "Docker", "SOA", "CI/CD · SonarQube",
+    ],
+  },
+  {
+    title: "Ciberseguridad",
+    accent: "text-wu",
+    dot: "from-[var(--wu)] to-[var(--wu-2)]",
+    items: [
+      "Kali Linux", "Nmap", "NetExec", "Metasploit", "Burp Suite",
+      "Escaneo de redes", "Pentesting", "Matrices de riesgo", "NIST", "ISO 27001",
+    ],
+  },
+];
 
-
-const SAMPLE_PROJECTS = [
-  { title: 'Ver Portafolio', description: 'Echa una mirada a mi experiencia laboral y alguno de mis proyectos desarrollados.', href: '/port', emoji: '💼' },
-  { title: 'Writeups de CTFs', description: 'Procedimiento y técnicas utilizadas para resolver máquinas vulnerables de distintas plataformas.', href: '/writeups', emoji: '🔓' },
+const courses = [
+  "Google Cloud Fundamentals",
+  "Essential Google Cloud Infrastructure",
+  "Introduction to Cybersecurity — Cisco",
+  "Ethical Hacker — Cisco",
 ];
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-full overflow-hidden bg-black">
-      {/* Animated Background - Professional HD */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        {/* Primary gradient orbs */}
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl opacity-80 animate-blob"></div>
-        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-emerald-400/15 rounded-full blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
-        
-        {/* Secondary accent orbs */}
-        <div className="absolute top-1/2 left-1/3 w-80 h-80 bg-emerald-500/12 rounded-full blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl opacity-50 animate-blob animation-delay-6000"></div>
-        
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/10 via-transparent to-emerald-500/10 opacity-50"></div>
-        
-        {/* Noise texture */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" /%3E%3C/filter%3E%3Crect width="400" height="400" fill="%23fff" filter="url(%23noiseFilter)" /%3E%3C/svg%3E")',
-        }}></div>
-      </div>
+    <main className="mx-auto max-w-6xl px-4 md:px-6">
+      <section className="hero pt-16 pb-12 md:pt-24 md:pb-16">
+        <p className="label-mono">Ingeniero Civil en Informática y Telecomunicaciones</p>
+        <h1 className="text-gradient mt-3 text-4xl font-semibold tracking-tight md:text-6xl">
+          Felipe Silva Escobar
+        </h1>
 
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-8 mt-10">
-        <div className="w-full max-w-5xl">
-
-          <section className="text-center mb-16 md:mb-20">
-       
-            <div className="mb-8">
-              <h1 className="text-4xl md:text-6xl lg:text-5xl font-bold mb-4">
-                <span className="neon">Felipe Silva Escobar</span>
-              
-              </h1>
-              <div className="h-1 w-20 bg-gradient-to-r from-emerald-400 to-transparent mx-auto mb-6"></div>
-            </div>
-
-        
-            <div className="mb-8">
-              <p className="text-lg md:text-2xl mb-3" style={{ color: 'var(--muted)' }}>
-                Ingeniero Civil en Informática y Telecomunicaciones
-              </p>
-              <p className="text-sm md:text-lg font-light text-emerald-200/70">
-                Ciberseguridad • Arquitecturas Escalables • Desarrollo de Software
-              </p>
-            </div>
-
-         
-            <div className="max-w-2xl mx-auto mb-10">
-              <p className="text-base md:text-lg leading-relaxed" style={{ color: 'var(--muted)' }}>
-                Profesional con pasión por la ciberseguridad y soluciones tecnológicas. Aquí encontrarás mis proyectos realizados y writeups de ejercicios de seguridad.
-              </p>
-            </div>
-
-           
-           
-          </section>
-
-       
-          <section className="mb-16 md:mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              <span className="neon">Destacados</span>
-            </h2>
-            <ProjectsGrid projects={SAMPLE_PROJECTS} />
-          </section>
-
-      
-          <section className="mb-16 md:mb-20">
-            <div className="max-w-2xl mx-auto">
-              <TerminalMock />
-            </div>
-          </section>
-
-         
-          <footer className="flex gap-6 items-center justify-center pt-8 border-t border-white/10">
-            {socialNetworks.map((network) => (
-              <a 
-                key={network.id} 
-                href={network.src} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="transition-all duration-300 hover:scale-110 hover:text-emerald-400 p-2"
-                aria-label="Social link"
-              >
-                {network.logo}
-              </a>
-            ))}
-          </footer>
+        <div className="mt-8 grid max-w-3xl gap-4 md:grid-cols-2">
+          <div className="role" data-accent="proj">
+            <p className="role-title">Backend &amp; Cloud Engineer</p>
+            <p className="mt-1 text-sm leading-relaxed text-muted">
+              Desarrollo APIs y microservicios con NestJS y Node.js, y los despliego en Google Cloud.
+            </p>
+          </div>
+          <div className="role" data-accent="wu">
+            <p className="role-title">Ciberseguridad</p>
+            <p className="mt-1 text-sm leading-relaxed text-muted">
+              Pentesting, escaneo de redes y resolución de CTFs con Kali Linux.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <section className="grid gap-4 md:grid-cols-2 md:gap-6" aria-label="Secciones">
+        <EntryPanel
+          index="01"
+          eyebrow="Proyectos"
+          title="Backend, Cloud y arquitectura"
+          description="APIs, microservicios, bases de datos y despliegues."
+          accent="proj"
+          href="/projects"
+          cta="Ver proyectos"
+          chips={["NestJS", "GCP", "Docker", "MongoDB"]}
+        >
+          <ArchitecturePreview />
+        </EntryPanel>
+
+        <EntryPanel
+          index="02"
+          eyebrow="Writeups"
+          title="Máquinas vulnerables y CTFs"
+          description="Resolución paso a paso: reconocimiento, explotación y escalada de privilegios."
+          accent="wu"
+          href="/writeups"
+          cta="Leer writeups"
+          chips={["Nmap", "NetExec", "Metasploit", "Kali Linux"]}
+        >
+          <TerminalPreview />
+        </EntryPanel>
+      </section>
+
+      <section className="mt-20" aria-label="Stack">
+        <h2 className="label-mono mb-4">Stack</h2>
+        <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+          {stack.map((group) => (
+            <div key={group.title} className="surface p-5">
+              <h3 className={`flex items-center gap-2 text-sm font-medium ${group.accent}`}>
+                <span className={`h-2 w-2 rounded-full bg-gradient-to-br ${group.dot}`} />
+                {group.title}
+              </h3>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <li key={item} className="chip">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-12" aria-label="Formación">
+        <h2 className="label-mono mb-4">Formación complementaria</h2>
+        <ul className="flex flex-wrap gap-2">
+          {courses.map((course) => (
+            <li key={course} className="chip">
+              {course}
+            </li>
+          ))}
+        </ul>
+      </section>
     </main>
   );
 }
