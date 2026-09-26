@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ScrambleText from "@/components/ScrambleText";
 import WriteupList from "@/components/WriteupList";
 import { getAllWriteups } from "@/lib/writeups";
 
@@ -16,7 +17,7 @@ export default function WriteupsIndex() {
         02 — Writeups
       </p>
       <h1 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
-        Máquinas vulnerables y CTFs
+        <ScrambleText text="Máquinas vulnerables y CTFs" />
       </h1>
       <p className="mt-3 mb-10 max-w-2xl text-muted">
         Cómo resolví cada máquina, paso a paso: reconocimiento, enumeración, explotación y escalada

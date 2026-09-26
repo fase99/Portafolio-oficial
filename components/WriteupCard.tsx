@@ -1,10 +1,11 @@
 import Link from "next/link";
 import DifficultyBadge from "./DifficultyBadge";
+import ScrambleText from "./ScrambleText";
 import type { WriteupMeta } from "@/lib/writeup-types";
 
 export default function WriteupCard({ writeup }: { writeup: WriteupMeta }) {
   return (
-    <Link href={`/writeups/${writeup.slug}`} className="entry group h-full" data-accent="wu">
+    <Link href={`/writeups/${writeup.slug}`} className="entry group h-full" data-accent="wu" data-scramble-scope>
       <div className="flex items-center justify-between gap-3">
         <span className="label-mono">
           {writeup.platform} · {writeup.os}
@@ -13,7 +14,9 @@ export default function WriteupCard({ writeup }: { writeup: WriteupMeta }) {
       </div>
 
       <div className="flex-1">
-        <h3 className="text-2xl font-semibold tracking-tight">{writeup.title}</h3>
+        <h3 className="text-2xl font-semibold tracking-tight">
+          <ScrambleText text={writeup.title} />
+        </h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">{writeup.summary}</p>
       </div>
 

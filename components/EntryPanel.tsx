@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ScrambleText from "./ScrambleText";
 
 type EntryPanelProps = {
   index: string;
@@ -9,7 +10,7 @@ type EntryPanelProps = {
   href: string;
   cta: string;
   chips: string[];
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 export default function EntryPanel({
@@ -24,13 +25,15 @@ export default function EntryPanel({
   children,
 }: EntryPanelProps) {
   return (
-    <Link href={href} className="entry group" data-accent={accent}>
+    <Link href={href} className="entry group" data-accent={accent} data-scramble-scope>
       <div>
         <p className="label-mono">
           <span className="entry-num">{index}</span> — {eyebrow}
         </p>
-        <h2 className="mt-2 text-2xl font-semibold tracking-tight">{title}</h2>
-        <p className="mt-2 text-sm leading-relaxed text-muted">{description}</p>
+        <h2 className="mt-2 text-2xl font-semibold tracking-tight md:text-3xl">
+          <ScrambleText text={title} />
+        </h2>
+        <p className="mt-3 leading-relaxed text-muted">{description}</p>
       </div>
 
       <div className="flex flex-1 flex-col justify-center">{children}</div>

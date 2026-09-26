@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Felipe Silva Escobar — Backend, Cloud & Ciberseguridad",
-    template: "%s · Felipe Silva Escobar",
+    default: " fase99 — Backend, Cloud & Ciberseguridad",
+    template: "%s · Felipe Alejandro Silva Escobar",
   },
   description:
-    "Ingeniero Civil en Informática y Telecomunicaciones. Proyectos de backend y cloud en GCP, y writeups de ciberseguridad.",
+    "Ingeniero Civil en Informática y Telecomunicaciones. Proyectos de backend y cloud en GCP, y ciberseguridad.",
 };
 
 export default function RootLayout({

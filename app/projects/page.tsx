@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ScrambleText from "@/components/ScrambleText";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/content/projects";
 
@@ -14,7 +15,7 @@ export default function ProjectsPage() {
         01 — Proyectos
       </p>
       <h1 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
-        Backend, Cloud y arquitectura
+        <ScrambleText text="Backend, Cloud y arquitectura" />
       </h1>
       <p className="mt-3 mb-10 max-w-2xl text-muted">
         Cada proyecto indica el stack por capa: arquitectura, datos, infraestructura y frontend.
