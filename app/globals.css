@@ -134,6 +134,55 @@ body {
   color: transparent;
 }
 
+/* Section heading: numbered eyebrow + short accent rule, plain title */
+.sh {
+  --accent: var(--proj);
+}
+.sh[data-accent="wu"] {
+  --accent: var(--wu);
+}
+.sh-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sh-index {
+  color: var(--accent);
+}
+.sh-rule {
+  width: 2rem;
+  height: 1px;
+  background: color-mix(in srgb, var(--accent) 60%, transparent);
+}
+.sh-title {
+  margin-top: 0.5rem;
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+@media (min-width: 768px) {
+  .sh-title { font-size: 2.25rem; }
+}
+.sh[data-size="md"] .sh-title {
+  font-size: 1.25rem;
+  letter-spacing: -0.015em;
+}
+@media (min-width: 768px) {
+  .sh[data-size="md"] .sh-title { font-size: 1.5rem; }
+}
+.sh-desc {
+  margin-top: 0.75rem;
+  max-width: 42rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
 .chip {
   display: inline-flex;
   align-items: center;
@@ -587,7 +636,8 @@ body {
   stroke: color-mix(in srgb, #2496ed 45%, transparent);
   stroke-dasharray: 6 4;
 }
-.arch-docker-label {
+.arch-docker-label,
+.arch-tier {
   fill: var(--muted);
   font-family: var(--font-mono);
   font-size: 9px;

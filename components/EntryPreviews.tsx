@@ -27,11 +27,11 @@ export function TerminalPreview() {
   );
 }
 
-const services = [
-  { label: "Pagos", x: 40 },
-  { label: "Puntos", x: 158 },
-  { label: "Carrito", x: 276 },
-];
+/* Same columns for both tiers: each client service talks to the bus, never to a server directly. */
+const columns = [72, 184, 296];
+const clients = ["Pagos", "Puntos", "Carrito"];
+const services = ["Pagos", "Puntos", "Carrito"];
+const NODE_W = 84;
 
 function Node({ x, y, w, h, label }: { x: number; y: number; w: number; h: number; label: string }) {
   return (
@@ -54,36 +54,45 @@ export function ArchitecturePreview() {
         <span className="terminal-title">Virtual Fit · arquitectura SOA</span>
       </div>
       <svg
-        viewBox="0 0 400 214"
+        viewBox="0 0 400 206"
         className="arch block w-full p-4"
         role="img"
-        aria-label="Diagrama: los clientes y los servicios de pagos, puntos y carrito se comunican a través de un bus de servicios; los servicios persisten en MongoDB y todo corre en contenedores Docker"
+        aria-label="Diagrama SOA: los servicios cliente de pagos, puntos y carrito se comunican con los servicios del servidor únicamente a través del bus de comunicación, que corre en un contenedor Docker; los servicios del servidor persisten en MongoDB"
       >
-        {/* Docker boundary */}
-        <rect className="arch-docker" x={6} y={50} width={388} height={158} rx={10} />
-        <g transform="translate(16 56) scale(0.5)">
+        {/* Docker boundary: only the bus runs in a container */}
+        <rect className="arch-docker" x={10} y={52} width={380} height={50} rx={10} />
+        <g transform="translate(18 56) scale(0.5)">
           <path d={siDocker.path} fill={`#${siDocker.hex}`} />
         </g>
-        <text className="arch-docker-label" x={32} y={66}>Docker</text>
+        <text className="arch-docker-label" x={34} y={66}>Docker</text>
 
-        {/* Clients <-> bus <-> services <-> database */}
-        <path className="arch-edge" d="M200 34 V74" />
-        {services.map(({ label, x }) => (
-          <g key={label}>
-            <path className="arch-edge" d={`M${x + 42} 94 V118`} />
-            <path className="arch-edge" d={`M${x + 42} 146 C${x + 42} 160 200 154 200 168`} />
-          </g>
+        {/* Client services <-> bus <-> server services -> database */}
+        {columns.map((x) => {
+          const cx = x + NODE_W / 2;
+          return (
+            <g key={x}>
+              <path className="arch-edge" d={`M${cx} 38 V74`} />
+              <path className="arch-edge" d={`M${cx} 94 V114`} />
+              <path className="arch-edge" d={`M${cx} 142 C${cx} 156 226 156 226 170`} />
+            </g>
+          );
+        })}
+
+        <text className="arch-tier" x={10} y={28}>Cliente</text>
+        {clients.map((label, i) => (
+          <Node key={`c-${label}`} x={columns[i]} y={10} w={NODE_W} h={28} label={label} />
         ))}
 
-        <Node x={150} y={6} w={100} h={28} label="Clientes" />
         <g className="arch-bus">
           <rect x={20} y={74} width={360} height={20} rx={10} />
           <text x={200} y={88} textAnchor="middle">BUS de comunicación</text>
         </g>
-        {services.map(({ label, x }) => (
-          <Node key={label} x={x} y={118} w={84} h={28} label={label} />
+
+        <text className="arch-tier" x={10} y={132}>Servidor</text>
+        {services.map((label, i) => (
+          <Node key={`s-${label}`} x={columns[i]} y={114} w={NODE_W} h={28} label={label} />
         ))}
-        <Node x={150} y={168} w={100} h={28} label="MongoDB" />
+        <Node x={176} y={170} w={100} h={28} label="MongoDB" />
       </svg>
     </div>
   );

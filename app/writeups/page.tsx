@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Network, Radar } from "lucide-react";
 import { siBurpsuite, siKalilinux, siMetasploit } from "simple-icons";
 import LogoMarquee, { type MarqueeItem } from "@/components/LogoMarquee";
-import ScrambleText from "@/components/ScrambleText";
+import SectionHeading from "@/components/SectionHeading";
 import WriteupList from "@/components/WriteupList";
 import { getAllWriteups } from "@/lib/writeups";
 
@@ -32,19 +32,24 @@ export default function WriteupsIndex() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
-      <p className="label-mono" style={{ color: "var(--wu)" }}>
-        02 — Writeups
-      </p>
-      <h1 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
-        <ScrambleText text="Máquinas vulnerables y CTFs" />
-      </h1>
-      <p className="mt-3 max-w-2xl text-muted">
-        Cómo resolví cada máquina, paso a paso: reconocimiento, enumeración, explotación y escalada
-        de privilegios.
-      </p>
+      <SectionHeading
+        as="h1"
+        index="02"
+        eyebrow="Writeups"
+        title="Máquinas vulnerables y CTFs"
+        accent="wu"
+        description="Cómo resolví cada máquina, paso a paso: reconocimiento, enumeración, explotación y escalada de privilegios."
+      />
 
-      <section className="mt-10 mb-12" aria-label="Herramientas">
-        <h2 className="label-mono mb-4">Herramientas</h2>
+      <section className="mt-14 mb-12" aria-labelledby="tools-title">
+        <SectionHeading
+          id="tools-title"
+          eyebrow="Arsenal"
+          title="Herramientas"
+          accent="wu"
+          size="md"
+          className="mb-6"
+        />
         <LogoMarquee items={tools} accent="wu" label="Herramientas de ciberseguridad" />
         <ul className="mt-4 flex flex-wrap gap-2">
           {practices.map((practice) => (

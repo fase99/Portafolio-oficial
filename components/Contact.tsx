@@ -1,5 +1,5 @@
 import CvButton from "./CvButton";
-import ScrambleText from "./ScrambleText";
+import SectionHeading from "./SectionHeading";
 
 const channels = [
   {
@@ -25,13 +25,13 @@ export default function Contact() {
     <section id="contacto" className="mt-28 scroll-mt-24" aria-labelledby="contacto-title">
       <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] md:gap-16">
         <div data-scramble-scope>
-          <p className="label-mono">03 — Contacto</p>
-          <h2 id="contacto-title" className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
-            <ScrambleText text="Contacto" />
-          </h2>
-          <p className="mt-3 max-w-xs text-sm text-muted">
-            Escríbeme, llámame o revisa mi CV.
-          </p>
+          <SectionHeading
+            id="contacto-title"
+            index="03"
+            eyebrow="Contacto"
+            title="Contacto"
+            description="Escríbeme, llámame o revisa mi CV."
+          />
           <div className="mt-6">
             <CvButton />
           </div>

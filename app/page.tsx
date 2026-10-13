@@ -5,6 +5,7 @@ import InterceptConsole from "@/components/InterceptConsole";
 import { ArchitecturePreview, TerminalPreview } from "@/components/EntryPreviews";
 import LogoMarquee, { type MarqueeItem } from "@/components/LogoMarquee";
 import ScrambleText from "@/components/ScrambleText";
+import SectionHeading from "@/components/SectionHeading";
 import {
   siDocker,
   siElasticsearch,
@@ -110,13 +111,26 @@ export default function Home() {
         </EntryPanel>
       </section>
 
-      <section className="mt-20" aria-label="Stack">
-        <h2 className="label-mono mb-4">Stack</h2>
+      <section className="mt-24" aria-labelledby="stack-title">
+        <SectionHeading
+          id="stack-title"
+          eyebrow="Stack"
+          title="Tecnologías con las que trabajo"
+          size="md"
+          className="mb-6"
+        />
         <LogoMarquee items={stack} label="Tecnologías de backend y cloud" />
       </section>
 
-      <section className="mt-12" aria-label="Formación">
-        <h2 className="label-mono mb-4">Formación complementaria</h2>
+      <section className="mt-16" aria-labelledby="formacion-title">
+        <SectionHeading
+          id="formacion-title"
+          eyebrow="Formación"
+          title="Formación complementaria"
+          accent="wu"
+          size="md"
+          className="mb-6"
+        />
         <ul className="flex flex-wrap gap-2">
           {courses.map((course) => (
             <li key={course} className="chip">
