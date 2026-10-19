@@ -2,10 +2,10 @@ import { Download } from "lucide-react";
 
 export default function CvButton() {
   return (
-    <a href="/Cv-profesional.PDF.pdf" download className="btn-primary">
-      <Download size={18} strokeWidth={2} aria-hidden="true" />
+    <a href="/Cv-profesional.PDF.pdf" download className="btn-ghost">
+      <Download size={17} strokeWidth={2} aria-hidden="true" />
       Descargar CV
-      <span className="btn-tag">PDF</span>
+      <span className="btn-tag !bg-surface-2">PDF</span>
     </a>
   );
 }

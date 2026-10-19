@@ -52,18 +52,18 @@ export default function InterceptConsole() {
 
       <div className="space-y-4 p-4 font-mono text-[0.8rem] leading-relaxed md:p-5">
         <pre className="overflow-x-auto whitespace-pre-wrap break-all text-muted">
-          <span className="text-proj">$</span> <span className="text-ink">tcpdump -A -i eth0 &apos;tcp port 443&apos;</span>
+          <span className="text-accent">$</span> <span className="text-ink">tcpdump -A -i eth0 &apos;tcp port 443&apos;</span>
           {"\n"}POST /api/v1/mensaje HTTP/1.1
           {"\n"}X-Encoding: base64
           {"\n"}
           {"\n"}
           {`{ "payload": "`}
-          <span className="text-wu">{PAYLOAD}</span>
+          <span className="text-[var(--diff-medium)]">{PAYLOAD}</span>
           {`" }`}
         </pre>
 
         <form onSubmit={handleSubmit} className="flex items-center gap-2 border-t border-white/10 pt-4">
-          <label htmlFor={inputId} className="shrink-0 text-proj">
+          <label htmlFor={inputId} className="shrink-0 text-accent">
             decode ›
           </label>
           <input
@@ -80,7 +80,7 @@ export default function InterceptConsole() {
           <button
             type="submit"
             disabled={solved || value.trim() === ""}
-            className="rounded-md border border-white/15 px-3 py-1 text-ink transition-colors hover:border-proj hover:text-proj disabled:cursor-not-allowed disabled:opacity-40"
+            className="rounded-md border border-white/15 px-3 py-1 text-ink transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-40"
           >
             Enviar
           </button>

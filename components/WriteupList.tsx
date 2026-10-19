@@ -27,7 +27,7 @@ function FilterGroup({
             aria-pressed={active}
             onClick={() => onChange(option === "Todos" ? "" : option)}
             className={`chip cursor-pointer transition-colors ${
-              active ? "!border-wu !bg-wu/10 !text-wu" : "hover:border-muted"
+              active ? "!border-accent !bg-accent/10 !text-accent" : "hover:border-muted"
             }`}
           >
             {option}

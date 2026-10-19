@@ -11,7 +11,7 @@ export default function Toc({ items }: { items: TocItem[] }) {
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className="-ml-px block border-l border-transparent py-1 pl-4 text-muted transition-colors hover:border-wu hover:text-ink"
+              className="-ml-px block border-l border-transparent py-1 pl-4 text-muted transition-colors hover:border-accent hover:text-ink"
             >
               <span className="mr-2 font-mono text-xs opacity-60">{String(i + 1).padStart(2, "0")}</span>
               {item.text}

@@ -1,22 +1,19 @@
 import Link from "next/link";
 import DifficultyBadge from "./DifficultyBadge";
-import ScrambleText from "./ScrambleText";
 import type { WriteupMeta } from "@/lib/writeup-types";
 
 export default function WriteupCard({ writeup }: { writeup: WriteupMeta }) {
   return (
-    <Link href={`/writeups/${writeup.slug}`} className="entry group h-full" data-accent="wu" data-scramble-scope>
+    <Link href={`/writeups/${writeup.slug}`} className="lab-card group">
       <div className="flex items-center justify-between gap-3">
         <span className="label-mono">
-          {writeup.platform} · {writeup.os}
+          {writeup.platform} · {writeup.os} · {writeup.date}
         </span>
         <DifficultyBadge difficulty={writeup.difficulty} />
       </div>
 
       <div className="flex-1">
-        <h3 className="text-2xl font-semibold tracking-tight">
-          <ScrambleText text={writeup.title} />
-        </h3>
+        <h3 className="font-display text-2xl font-semibold tracking-tight">{writeup.title}</h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">{writeup.summary}</p>
       </div>
 
@@ -28,8 +25,8 @@ export default function WriteupCard({ writeup }: { writeup: WriteupMeta }) {
         ))}
       </ul>
 
-      <span className="entry-cta text-sm">
-        Leer writeup <span aria-hidden>→</span>
+      <span className="inline-flex items-center gap-2 font-mono text-sm text-accent">
+        cat writeup.md <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
       </span>
     </Link>
   );

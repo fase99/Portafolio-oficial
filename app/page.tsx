@@ -1,146 +1,136 @@
+import Link from "next/link";
 import Contact from "@/components/Contact";
-import CvButton from "@/components/CvButton";
-import EntryPanel from "@/components/EntryPanel";
-import InterceptConsole from "@/components/InterceptConsole";
-import { ArchitecturePreview, TerminalPreview } from "@/components/EntryPreviews";
-import LogoMarquee, { type MarqueeItem } from "@/components/LogoMarquee";
-import ScrambleText from "@/components/ScrambleText";
+import LabTeaser from "@/components/LabTeaser";
+import Process from "@/components/Process";
+import ProjectCard from "@/components/ProjectCard";
+import RequestTrace from "@/components/RequestTrace";
 import SectionHeading from "@/components/SectionHeading";
-import {
-  siDocker,
-  siElasticsearch,
-  siExpress,
-  siGooglecloud,
-  siGooglepubsub,
-  siMongodb,
-  siNestjs,
-  siNodedotjs,
-  siSonarqubeserver,
-  siTypescript,
-} from "simple-icons";
+import Services from "@/components/Services";
+import StackGrid from "@/components/StackGrid";
+import { projects } from "@/content/projects";
+import { getAllWriteups } from "@/lib/writeups";
 
-const stack: MarqueeItem[] = [
-  { name: "NestJS", icon: siNestjs },
-  { name: "TypeScript", icon: siTypescript },
-  { name: "Node.js", icon: siNodedotjs },
-  { name: "Express", icon: siExpress },
-  { name: "MongoDB", icon: siMongodb },
-  { name: "Google Cloud", icon: siGooglecloud },
-  { name: "GCP Pub/Sub", icon: siGooglepubsub },
-  { name: "Elasticsearch", icon: siElasticsearch },
-  { name: "Docker", icon: siDocker },
-  { name: "SonarQube", icon: siSonarqubeserver },
-];
-
-const courses = [
-  "Google Cloud Fundamentals",
-  "Essential Google Cloud Infrastructure",
-  "Introduction to Cybersecurity — Cisco",
-  "Ethical Hacker — Cisco",
+const education = [
+  { title: "Ingeniería Civil en Informática y Telecomunicaciones", place: "Universidad Diego Portales" },
+  { title: "Google Cloud Fundamentals", place: "Google Cloud" },
+  { title: "Essential Google Cloud Infrastructure", place: "Google Cloud" },
+  { title: "Introduction to Cybersecurity", place: "Cisco" },
+  { title: "Ethical Hacker", place: "Cisco" },
 ];
 
 export default function Home() {
+  const writeups = getAllWriteups();
+
   return (
-    <main className="mx-auto max-w-6xl px-4 md:px-6">
-      <section className="hero pt-20 pb-20 md:pt-32 md:pb-28">
-        <p className="label-mono flex items-center gap-3">
-          <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-br from-[var(--proj)] to-[var(--wu)]" />
-          Ingeniero Civil en Informática y Telecomunicaciones
-        </p>
+    <main>
+      {/* Hero */}
+      <section className="container-x grid items-center gap-14 pb-20 pt-14 md:pt-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16 lg:pb-28">
+        <div>
+          <p className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted">
+            <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1">
+              <span className="pulse" aria-hidden />
+              Disponible para proyectos y nuevas oportunidades
+            </span>
+          </p>
 
-        <h1
-          data-scramble-scope
-          className="mt-6 w-fit text-5xl font-semibold leading-[1] tracking-tighter sm:text-7xl lg:text-8xl"
-        >
-          <span className="block">
-            <ScrambleText text="Felipe Alejandro Silva" textClassName="text-gradient" />
-          </span>
-          <span className="block">
-            <ScrambleText text="Escobar" textClassName="text-gradient" />
-          </span>
-        </h1>
+          <h1 className="display mt-8 text-[2.9rem] sm:text-6xl lg:text-[4.6rem]">
+            Hola, soy <span className="text-accent">Felipe</span>
+          </h1>
 
-        <div className="mt-14 grid max-w-4xl gap-x-14 gap-y-10 md:mt-20 md:grid-cols-2">
-          <div className="role" data-accent="proj">
-            <p className="role-title">Backend &amp; Cloud Engineer</p>
-            <p className="mt-2 leading-relaxed text-muted">
-              Desarrollo APIs y microservicios con NestJS y Node.js, y los despliego en Google Cloud.
-            </p>
-          </div>
-          <div className="role" data-accent="wu">
-            <p className="role-title">Ciberseguridad</p>
-            <p className="mt-2 leading-relaxed text-muted">
-              Pentesting, escaneo de redes y resolución de CTFs con Kali Linux.
-            </p>
+          <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted">
+            Soy Ingeniero Civil en Informática y Telecomunicaciones y{" "}
+            <strong className="font-semibold text-ink">desarrollador full stack</strong>. Desarrollo aplicaciones web
+            trabajando tanto en el frontend como en el backend, las bases de datos y el despliegue. También me dedico a
+            la ciberseguridad y resuelvo máquinas vulnerables.
+          </p>
+
+          <div className="mt-10 flex flex-wrap items-center gap-3">
+            <Link href="/projects" className="btn-primary">
+              Ver proyectos <span aria-hidden>→</span>
+            </Link>
+            <Link href="/#contacto" className="btn-ghost">
+              Hablemos
+            </Link>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-wrap items-center gap-3">
-        
-          <a href="#contacto" className="btn-ghost">
-            Contacto
-          </a>
-        </div>
+        <RequestTrace />
       </section>
 
-      <section className="grid gap-4 md:grid-cols-2 md:gap-6" aria-label="Secciones">
-        <EntryPanel
+      {/* Services */}
+      <section id="servicios" className="container-x scroll-mt-24 py-24 md:py-32" aria-labelledby="servicios-title">
+        <SectionHeading
+          id="servicios-title"
           index="01"
-          eyebrow="Proyectos"
-          title="Backend, Cloud y arquitectura"
-          description="APIs y microservicios en JavaScript y TypeScript con Node.js y NestJS, arquitecturas SOA, persistencia en MongoDB y despliegues con Docker. Cada proyecto detalla su stack por capa y enlaza a su código."
-          accent="proj"
-          href="/projects"
-          cta="Ver proyectos"
-          chips={["NestJS", "SOA", "Docker", "MongoDB"]}
-        >
-          <ArchitecturePreview />
-        </EntryPanel>
-
-        <EntryPanel
-          index="02"
-          eyebrow="Writeups"
-          title="Máquinas vulnerables y CTFs"
-          description="Resolución paso a paso: reconocimiento, explotación y escalada de privilegios."
-          accent="wu"
-          href="/writeups"
-          cta="Leer writeups"
-          chips={["Nmap", "NetExec", "Metasploit", "Kali Linux"]}
-        >
-          <TerminalPreview />
-        </EntryPanel>
+          eyebrow="Servicios"
+          title="Qué hago"
+          description="Tipos de proyectos en los que puedo trabajar, ya sea desarrollándolos completos o en una parte específica."
+          className="mb-12"
+        />
+        <Services />
       </section>
 
-      <section className="mt-24" aria-labelledby="stack-title">
+      {/* Selected work */}
+      <section className="container-x" aria-labelledby="trabajo-title">
+        <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
+          <SectionHeading
+            id="trabajo-title"
+            index="02"
+            eyebrow="Trabajo seleccionado"
+            title="Proyectos"
+            description="La barra bajo cada proyecto indica qué capas de la aplicación desarrollé."
+          />
+          <Link href="/projects" className="link-arrow">
+            Ver casos en detalle <span aria-hidden>→</span>
+          </Link>
+        </div>
+        <div className="grid gap-x-8 gap-y-16 md:grid-cols-2">
+          {projects.map((project, i) => (
+            <ProjectCard key={project.slug} project={project} index={i} />
+          ))}
+        </div>
+      </section>
+
+      {/* Stack */}
+      <section className="container-x py-24 md:py-32" aria-labelledby="stack-title">
         <SectionHeading
           id="stack-title"
+          index="03"
           eyebrow="Stack"
-          title="Tecnologías con las que trabajo"
-          size="md"
-          className="mb-6"
+          title="Tecnologías"
+          className="mb-12"
         />
-        <LogoMarquee items={stack} label="Tecnologías de backend y cloud" />
+        <StackGrid />
       </section>
 
-      <section className="mt-16" aria-labelledby="formacion-title">
+      {/* Process */}
+      <section className="container-x pb-24 md:pb-32" aria-labelledby="proceso-title">
         <SectionHeading
-          id="formacion-title"
-          eyebrow="Formación"
-          title="Formación complementaria"
-          accent="wu"
-          size="md"
-          className="mb-6"
+          id="proceso-title"
+          index="04"
+          eyebrow="Proceso"
+          title="Cómo trabajo"
+          className="mb-12"
         />
-        <ul className="flex flex-wrap gap-2">
-          {courses.map((course) => (
-            <li key={course} className="chip">
-              {course}
-            </li>
-          ))}
-        </ul>
+        <Process />
       </section>
 
-      
+      <LabTeaser writeups={writeups} />
+
+      {/* Education */}
+      <section className="container-x pt-24 md:pt-32" aria-labelledby="formacion-title">
+        <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] md:gap-16">
+          <SectionHeading id="formacion-title" index="06" eyebrow="Formación" title="Formación" />
+          <ul className="divide-y divide-line border-y border-line">
+            {education.map((item) => (
+              <li key={item.title} className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+                <span className="font-medium">{item.title}</span>
+                <span className="label-mono shrink-0">{item.place}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       <Contact />
     </main>

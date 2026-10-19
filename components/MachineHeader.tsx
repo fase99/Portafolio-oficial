@@ -1,5 +1,4 @@
 import DifficultyBadge from "./DifficultyBadge";
-import ScrambleText from "./ScrambleText";
 import type { WriteupMeta } from "@/lib/writeup-types";
 
 function ChipList({ items }: { items: string[] }) {
@@ -24,16 +23,14 @@ export default function MachineHeader({ writeup }: { writeup: WriteupMeta }) {
   ];
 
   return (
-    <div className="surface overflow-hidden">
-      <div className="h-1 bg-gradient-to-r from-[var(--wu)] to-[var(--wu-2)]" />
+    <div className="card overflow-hidden">
+      <div className="h-1 bg-accent" />
 
       <div className="p-6 md:p-8">
-        <p className="label-mono" style={{ color: "var(--wu)" }}>
+        <p className="label-mono !text-accent">
           Writeup · {writeup.platform}
         </p>
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight md:text-5xl">
-          <ScrambleText text={writeup.title} />
-        </h1>
+        <h1 className="display mt-3 text-4xl md:text-6xl">{writeup.title}</h1>
         <p className="mt-3 max-w-2xl text-muted">{writeup.summary}</p>
 
         <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-line pt-5 sm:grid-cols-3 lg:grid-cols-5">
@@ -63,7 +60,7 @@ export default function MachineHeader({ writeup }: { writeup: WriteupMeta }) {
               {writeup.attackPath.map((step, i) => (
                 <li key={step} className="flex items-center gap-2">
                   <span className="rounded-md border border-line-strong bg-surface-2 px-2.5 py-1">
-                    <span className="mr-2 font-mono text-xs text-wu">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="mr-2 font-mono text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>
                     {step}
                   </span>
                   {i < writeup.attackPath.length - 1 && (

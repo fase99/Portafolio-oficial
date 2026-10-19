@@ -1,46 +1,35 @@
-import ScrambleText from "./ScrambleText";
-import StackChips from "./StackChips";
+import Link from "next/link";
+import Coverage from "./Coverage";
 import type { Project } from "@/content/projects";
 
-const linkClass =
-  "rounded-md border border-line-strong px-3 py-1.5 text-sm text-ink transition-colors hover:border-proj hover:text-proj";
-
-export default function ProjectCard({ project }: { project: Project }) {
-  const { title, tagline, summary, image, stack, links } = project;
+/** Compact project card for the home page. */
+export default function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const { title, kind, tagline, image, covers, slug } = project;
 
   return (
-    <article className="entry !gap-0 !p-0 overflow-hidden" data-accent="proj" data-scramble-scope>
-      <div className="aspect-video overflow-hidden border-b border-line bg-bg">
+    <Link href={`/projects#${slug}`} className="group flex flex-col gap-5">
+      <div className="project-media aspect-[16/10]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={image} alt={`Captura de ${title}`} className="h-full w-full object-cover object-top" />
+        <img src={image} alt={`Captura de ${title}`} className="h-full w-full object-cover object-top" loading="lazy" />
       </div>
 
-      <div className="flex flex-1 flex-col gap-4 p-6">
-        <div>
-          <h2 className="text-xl font-semibold tracking-tight">
-            <ScrambleText text={title} />
-          </h2>
-          <p className="mt-2 text-sm leading-relaxed text-ink/90">{tagline}</p>
-          {summary && <p className="mt-2 text-sm leading-relaxed text-muted">{summary}</p>}
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0">
+          <p className="label-mono">
+            <span className="text-accent">{String(index + 1).padStart(2, "0")}</span> · {kind}
+          </p>
+          <h3 className="mt-2 font-display text-2xl font-semibold tracking-tight">{title}</h3>
+          <p className="mt-2 leading-relaxed text-muted">{tagline}</p>
         </div>
-
-        <div className="flex-1">
-          <StackChips stack={stack} />
-        </div>
-
-        <div className="flex flex-wrap gap-2 border-t border-line pt-4">
-          {links.code && (
-            <a href={links.code} target="_blank" rel="noopener noreferrer" className={linkClass}>
-              Código ↗{"\uFE0E"}
-            </a>
-          )}
-          {links.demo && (
-            <a href={links.demo} target="_blank" rel="noopener noreferrer" className={linkClass}>
-              Demo ↗{"\uFE0E"}
-            </a>
-          )}
-        </div>
+        <span
+          aria-hidden
+          className="mt-1 grid h-10 w-10 shrink-0 place-items-center rounded-full border border-line-strong transition-all group-hover:-rotate-45 group-hover:border-accent group-hover:bg-accent group-hover:text-[var(--accent-ink)]"
+        >
+          →
+        </span>
       </div>
-    </article>
+
+      <Coverage covers={covers} showLabels />
+    </Link>
   );
 }

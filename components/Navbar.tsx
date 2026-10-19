@@ -2,49 +2,51 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
-  { href: "/projects", label: "Proyectos", accent: "text-proj" },
-  { href: "/writeups", label: "Writeups", accent: "text-wu" },
+  { href: "/projects", label: "Proyectos" },
+  { href: "/#servicios", label: "Servicios", hideOnMobile: true },
+  { href: "/writeups", label: "Security Lab" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line/80 bg-bg/70 backdrop-blur-md">
-      <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 md:px-6">
-        <Link href="/" className="font-mono text-sm font-semibold tracking-tight text-ink">
-          <span className="mr-2 inline-block h-2 w-2 rounded-full bg-gradient-to-br from-[var(--proj)] to-[var(--wu)]" />
-          fase99<span className="text-muted">/</span>
+    <header className="sticky top-0 z-50 border-b border-line bg-bg/80 backdrop-blur-md">
+      <nav className="container-x flex h-16 items-center justify-between gap-4">
+        <Link href="/" className="flex items-center gap-2.5 text-ink" aria-label="Felipe Silva — inicio">
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-ink font-mono text-[0.7rem] font-bold text-bg">
+            fs
+          </span>
+          <span className="hidden text-sm font-semibold tracking-tight sm:inline">fase99</span>
         </Link>
 
-        <ul className="flex items-center gap-1 text-sm">
-          {links.map(({ href, label, accent }) => {
-            const active = pathname === href || pathname.startsWith(`${href}/`);
-            return (
-              <li key={href}>
-                <Link
-                  href={href}
-                  aria-current={active ? "page" : undefined}
-                  className={`rounded-md px-3 py-1.5 transition-colors hover:bg-surface ${
-                    active ? `${accent} bg-surface-2` : "text-muted hover:text-ink"
-                  }`}
-                >
-                  {label}
-                </Link>
-              </li>
-            );
-          })}
-          <li>
-            <Link
-              href="/#contacto"
-              className="rounded-md px-3 py-1.5 text-muted transition-colors hover:bg-surface hover:text-ink"
-            >
-              Contacto
-            </Link>
-          </li>
-        </ul>
+        <div className="flex items-center gap-1 sm:gap-2">
+          <ul className="flex items-center gap-0.5 text-sm">
+            {links.map(({ href, label, hideOnMobile }) => {
+              const active = !href.startsWith("/#") && (pathname === href || pathname.startsWith(`${href}/`));
+              return (
+                <li key={href} className={hideOnMobile ? "hidden md:block" : undefined}>
+                  <Link
+                    href={href}
+                    aria-current={active ? "page" : undefined}
+                    className={`rounded-full px-3 py-1.5 transition-colors ${
+                      active ? "bg-surface-2 text-ink" : "text-muted hover:text-ink"
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <ThemeToggle />
+          <Link href="/#contacto" className="btn-primary hidden !px-4 !py-2.5 !text-sm sm:inline-flex">
+            Hablemos
+          </Link>
+        </div>
       </nav>
     </header>
   );

@@ -25,9 +25,9 @@ export default async function WriteupPage({ params }: { params: Promise<Params> 
   if (!writeup) notFound();
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-14">
+    <main className="container-x pt-10 md:pt-14">
       <Link href="/writeups" className="label-mono transition-colors hover:text-ink">
-        ← Writeups
+        ← cd ../writeups
       </Link>
 
       <div className="mt-6">
